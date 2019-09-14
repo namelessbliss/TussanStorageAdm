@@ -56,13 +56,13 @@
 
 
     <!--LOGIN-->
-    <div id="login" class="fondo">
-        <div class="container-fluid py-5 sombra">
-            <div class="container">
-                <div class="row py-5">
+    <div id="login" class="fondo py-sm-5">
+        <div class="container-fluid pt-5 sombra">
+            <div class="container py-sm-5">
+                <div class="row py-sm-5">
 
-                    <div class="col-6">
-                        <h2 class="pb-5 text-white">Bienvenido al Sistema Almacen Tussan</h2>
+                    <div class="col-xl-8 col-md-6 col-sm-12 py-1">
+                        <h2 class="pb-2 text-white">Bienvenido al Sistema Almacen Tussan</h2>
                         <p class="text-white">
                             Ultimas noticias sobre las reglas del negocio:
                             - Esta es una presentacion del sistema actual para
@@ -70,14 +70,13 @@
                         </p>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-xl-4 col-md-6 col-sm-12 py-1">
                         <!--LOGIN-->
                         <div class="card text-center">
                             <div class="card-block p-4">
                                 <div class="py-3">
                                     <span class="display-4 align-items-middle">Inicio Sesion</span>
                                 </div>
-                                <p class="card-text">Ingrese sus credenciales: Usuario y Contraseña.</p>
                                 <form id="form1" action="#" class="row justify-content-center" runat="server">
                                     <div>
                                         <div class="form-group col-12">
@@ -110,7 +109,7 @@
         <div class="container py-5">
             <div class="row">
                 <!--SERVICIO N1-->
-                <div class="col-md-4">
+                <div class="col-xl-4 col-md-6 col-xm-12 py-1">
                     <div class="card text-center">
                         <div class="card-block">
                             <div class="py-3">
@@ -129,7 +128,7 @@
                 </div>
                 <!--SERVICIO N1-->
                 <!--SERVICIO N2-->
-                <div class="col-md-4">
+                <div class="col-xl-4 col-md-6 col-xm-12 py-1">
                     <div class="card text-center">
                         <div class="card-block">
                             <div class="py-3">
@@ -144,7 +143,7 @@
                 </div>
                 <!--SERVICIO N2-->
                 <!--SERVICIO N3-->
-                <div class="col-md-4">
+                <div class="col-xl-4 col-md-6 col-xm-12 py-1">
                     <div class="card text-center">
                         <div class="card-block">
                             <div class="py-3">
