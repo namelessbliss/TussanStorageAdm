@@ -21,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <title>Almacen Tussan</title>
+    <title>Tussan</title>
 </head>
 <body>
 
@@ -59,23 +59,24 @@
     <div id="login" class="fondo py-sm-5">
         <div class="container-fluid pt-5 sombra">
             <div class="container py-sm-5">
-                <div class="row py-sm-5">
+                <div class="row pt-3 py-sm-2 py-md-2 py-xl-2">
 
-                    <div class="col-xl-8 col-md-6 col-sm-12 py-1">
+                    <div class="col-xl-8 col-md-6 col-sm-12 py-0">
                         <h2 class="pb-2 text-white">Bienvenido al Sistema Almacen Tussan</h2>
                         <p class="text-white">
                             Ultimas noticias sobre las reglas del negocio:
                             - Esta es una presentacion del sistema actual para
                             control y registro de almacen de nuestra empresa
+                       
                         </p>
                     </div>
 
-                    <div class="col-xl-4 col-md-6 col-sm-12 py-1">
+                    <div class="col-xl-4 col-md-6 col-sm-12">
                         <!--LOGIN-->
                         <div class="card text-center">
-                            <div class="card-block p-4">
-                                <div class="py-3">
-                                    <span class="display-4 align-items-middle">Inicio Sesion</span>
+                            <div class="card-block p-0 p-sm-4 p-md-4 p-xl-4">
+                                <div class="py-0 py-sm-3 py-md-3 py-xl-3">
+                                    <span class="display-4 display-sm-4 display-md-4 display-xl-4 align-items-middle">Inicio Sesion</span>
                                 </div>
                                 <form id="form1" action="#" class="row justify-content-center" runat="server">
                                     <div>
@@ -85,7 +86,7 @@
                                         <div class="form-group col-12">
                                             <asp:TextBox runat="server" type="password" placeholder="Contraseña" class="form-control" ID="txtContraseña" />
                                         </div>
-                                        <div class="col-12 py-4">
+                                        <div class="col-12 py-2">
                                             <div class="row justify-content-center">
                                                 <asp:Button runat="server" Text="Ingresar" class="btn bg-primary text-white col-6" ID="btnLogin" />
                                             </div>
@@ -117,8 +118,10 @@
                             </div>
                             <p class="h1">
                                 Por
+                               
                                 <math style="font-family: Verdana" xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>m</mi><mn>3</mn></msup></math>
                                 al día
+                           
                             </p>
                             <h4 class="card-title py-2"><b>Almacenamiento</b></h4>
                             <p class="card-text mx-2">Almacenamiento de paquetes en nuestro almacen bajo estrictos parametros de seguridad.</p>
@@ -167,7 +170,7 @@
     <div id="historia" class="container-fluid bg-fondo-crema">
         <div class="container py-5">
             <div class="row align-items-center text-right py-5">
-                <div class="col-6">
+                <div class="col-12 col-sm-6 col-md-6 col-sxl-6">
                     <p class="display-4 pb-5">TUSSAN S.A.C.</p>
                     <p><b>Somos una empresa proveedora de servicio de logística a clientes y a empresas, tanto privadas como públicas.</b></p>
                     <h2 class="pb-5">Visión:</h2>
@@ -175,7 +178,7 @@
                     <h2 class="pb-5">Misión:</h2>
                     <p><b>"Somos una organización que brinda soluciones empresariales logísticos de almacenaje y transporte de paquetes con profesionalismo, seguridad y puntualidad a los lugares de destino definidos por nuestros clientes.”</b></p>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6 col-md-6 col-sxl-6">
                     <img src="img/Documentos.jpg" class="img-fluid" width="500px">
                 </div>
             </div>
@@ -186,7 +189,7 @@
         <div class="row text-center mx-5">
             <div class="col-12">
                 <p class="display-4 ">Historia</p>
-                <p><b>TUSSAM nace hace 3 años cuando su fundador el Sr. Norvic decide crear una empresa dedicada a la logística de documentos sumamente confidenciales de estudios contables y entidades jurídicas poco a poco fue incrementando su clientela y hoy es un referente en el rubro de logística para el sector jurídico. </b></p>
+                <p><b>TUSSAN nace hace 3 años cuando su fundador el Sr. Norvic decide crear una empresa dedicada a la logística de documentos sumamente confidenciales de estudios contables y entidades jurídicas poco a poco fue incrementando su clientela y hoy es un referente en el rubro de logística para el sector jurídico. </b></p>
             </div>
         </div>
     </div>
