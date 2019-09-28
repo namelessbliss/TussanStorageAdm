@@ -20,13 +20,18 @@ public partial class _Default : System.Web.UI.Page {
 
         if (usuario.Length > 0 && contraseña.Length > 0)
         {
-            string sql = "exec sp_login 1, '$usuario', '$contraseña'";
-            obj.conexion("TussanBD", "", "", "NAMELESSBLISS");
+            string sql = "exec sp_login 1, '" + usuario + "', '" + contraseña + "'";
+            obj.conexion("TussanBD", "administrador", "123", "NAMELESSBLISS");
 
             if (obj.login(sql) == 1)
             {
-                Console.WriteLine("Hello World!");
+                Response.Redirect("resumen.aspx");
             }
+            else
+            {
+                Console.WriteLine("El usuario no existe");
+            }
+
         }
     }
 }

@@ -32,7 +32,8 @@ public class ClassAdo {
         OleDbCommand cmd = new OleDbCommand();
         cmd.Connection = con;
         cmd.CommandText = sql;
-        return cmd.ExecuteNonQuery();
+        int resultado = (Int32)cmd.ExecuteScalar();
+        return resultado;
     }
 
     public DataSet consultasql(string sql) //retorna datos
