@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="col-12 py-2">
                                             <div class="row justify-content-center">
-                                                <asp:Button runat="server" Text="Ingresar" class="btn bg-primary text-white col-6" ID="btnLogin" />
+                                                <asp:Button runat="server" Text="Ingresar" class="btn bg-primary text-white col-6" ID="btnLogin" OnClick="btnLogin_Click" />
                                             </div>
                                         </div>
                                     </div>

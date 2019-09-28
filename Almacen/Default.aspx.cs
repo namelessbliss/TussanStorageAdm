@@ -6,8 +6,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page {
-    protected void Page_Load(object sender, EventArgs e)
-    {
 
+    ClassAdo obj = new ClassAdo();
+
+    protected void Page_Load(object sender, EventArgs e) {
+
+    }
+
+    protected void btnLogin_Click(object sender, EventArgs e) {
+
+        string usuario = txtUsuario.Text;
+        string contraseña = txtContraseña.Text;
+
+        if (usuario.Length > 0 && contraseña.Length > 0)
+        {
+            string sql = "exec sp_login 1, '$usuario', '$contraseña'";
+            obj.conexion("TussanBD", "", "", "NAMELESSBLISS");
+
+            if (obj.login(sql) == 1)
+            {
+                Console.WriteLine("Hello World!");
+            }
+        }
     }
 }
