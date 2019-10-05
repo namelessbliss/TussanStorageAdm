@@ -3,35 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Almacen", "Almacen\", "{85294492-394F-4705-9E74-0AE4FD98C133}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_51278"
-		Debug.AspNetCompiler.PhysicalPath = "Almacen\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51278\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_51278"
-		Release.AspNetCompiler.PhysicalPath = "Almacen\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51278\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "51278"
-		SlnRelativePath = "Almacen\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAPA_DATOS", "CAPA_DATOS\CAPA_DATOS.csproj", "{BF65EB9A-97DE-4FD8-B52A-DEF19BA8B044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAPA_NEGOCIO", "CAPA_NEGOCIO\CAPA_NEGOCIO.csproj", "{2AA3DD15-4AC1-45F0-8AB2-C729063BE2B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysAlmacen", "SysAlmacen\SysAlmacen.csproj", "{FF9CC7C5-59C5-4CC0-B55F-F971E9ED5F4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85294492-394F-4705-9E74-0AE4FD98C133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85294492-394F-4705-9E74-0AE4FD98C133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF65EB9A-97DE-4FD8-B52A-DEF19BA8B044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF65EB9A-97DE-4FD8-B52A-DEF19BA8B044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF65EB9A-97DE-4FD8-B52A-DEF19BA8B044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF65EB9A-97DE-4FD8-B52A-DEF19BA8B044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AA3DD15-4AC1-45F0-8AB2-C729063BE2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AA3DD15-4AC1-45F0-8AB2-C729063BE2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AA3DD15-4AC1-45F0-8AB2-C729063BE2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AA3DD15-4AC1-45F0-8AB2-C729063BE2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9CC7C5-59C5-4CC0-B55F-F971E9ED5F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9CC7C5-59C5-4CC0-B55F-F971E9ED5F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9CC7C5-59C5-4CC0-B55F-F971E9ED5F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9CC7C5-59C5-4CC0-B55F-F971E9ED5F4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

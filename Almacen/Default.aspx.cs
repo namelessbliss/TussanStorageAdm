@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CAPA_DATOS;
 
 public partial class _Default : System.Web.UI.Page {
 
@@ -29,7 +30,7 @@ public partial class _Default : System.Web.UI.Page {
             }
             else
             {
-                Console.WriteLine("El usuario no existe");
+                Response.Redirect("default.aspx");
             }
 
         }

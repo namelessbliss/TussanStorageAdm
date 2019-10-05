@@ -1,0 +1,85 @@
+
+      body{
+		font-family: 'Roboto', sans-serif;
+		color: #444;
+      }
+      h1,h2,h3,h4,h5,h6,p{
+		font-family: 'Roboto', sans-serif;
+      }
+
+      h1{
+      	font-size: 2.5rem;
+      	font-weight: 300;
+      }
+      .h1{
+      	font-weight: 300;
+      }
+      .card-block .display-1{
+      	font-size: 6.25rem;
+      }
+      h2{
+      	font-size: 2rem;
+      	font-weight: 300;
+      }
+      h3{
+      	font-size: 1.75rem;
+      	font-weight: 300;
+      }
+      h4{
+      	font-size: 1.5rem;
+      	font-weight: 400;
+      }
+      p{
+      	font-weight: 300;
+      }
+
+      .fondo{
+        background: url('../img/almacen.jpg');
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .sombra{
+        background-color: rgba(0,0,0,.5);
+        height: 100vh;
+      }
+
+      .btn{
+      	font-size: 1.25rem;
+      	font-weight: 300;
+      }
+
+      .pb-25{
+      	padding-bottom: 2.5rem;
+      }
+
+      .bg-fondo-claro{
+      	background-color: #fefaec;
+      }
+
+      .bg-fondo-crema{
+            background-color: #fbe4c9;
+      }
+
+      .iconos{
+      	font-size: 2.25rem;
+      }
+      .bg-danger{
+      	background-color: #f38181 !important;
+      }
+      .bg-morado{
+      	background-color: #625772 !important;	
+      }
+      .card{
+      	border: none;
+      }
+      .bg-primary{
+      	background-color: #4f81c7 !important;
+      }
+      a.bg-primary:focus, a.bg-primary:hover{
+      	background-color: #64c4ed !important;
+      }
+      .bg-dark{
+            background-color: #132743 !important;
+      }
