@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassAdo.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="DB\ObjConexion.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

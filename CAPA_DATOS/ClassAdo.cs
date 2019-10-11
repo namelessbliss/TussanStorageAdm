@@ -10,19 +10,20 @@ namespace CAPA_DATOS {
     /// Descripción breve de ClassAdo
     /// </summary>
     public class ClassAdo {
-        OleDbConnection con = new OleDbConnection();
+        protected OleDbConnection con = new OleDbConnection();
+        protected OleDbCommand cmd;
         public ClassAdo() {
 
         }
 
-        public void conexion(string db, string user, string pass, string server) //msn mensaje de retorno
+        public void conexion(ObjConexion obj) //msn mensaje de retorno
         {
-            con.ConnectionString = "Provider=SQLNCLI11;Data Source=" + server + ";Persist Security Info=True;User ID=" + user + ";password=" + pass + ";Initial Catalog=" + db;
+            con.ConnectionString = "Provider=SQLNCLI11;Data Source=" + obj.Server + ";Persist Security Info=True;User ID=" + obj.User + ";password=" + obj.Pass + ";Initial Catalog=" + obj.DB;
             con.Open();
         }
         public void transaccion(string sql) //1.- exito, 0 fallo
         {
-            OleDbCommand cmd = new OleDbCommand();
+
             cmd.Connection = con;
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
@@ -42,10 +43,12 @@ namespace CAPA_DATOS {
             DataSet ds = new DataSet();
             OleDbDataAdapter da = new OleDbDataAdapter(sql, con);
             da.Fill(ds, "tabla");
+            con.Close();
             return ds;
         }
 
         public void closeConexion() {
+            cmd.Dispose();
             con.Close();
         }
     }
