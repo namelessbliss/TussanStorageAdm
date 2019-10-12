@@ -17,5 +17,6 @@ namespace CAPA_DATOS {
          **/
 
         public const string REGISTRAR_EMPLEADO = "sp_registrarEmpleado";
+        public const string ACTUALIZAR_EMPLEADO = "sp_actualizarEmpleado";
     }
 }

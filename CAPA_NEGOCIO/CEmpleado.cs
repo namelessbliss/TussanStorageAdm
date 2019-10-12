@@ -41,5 +41,35 @@ namespace CAPA_NEGOCIO {
             string sql = "execute sp_selectEmpleados;";
             return consultasql(sql);
         }
+
+        public void actualizarEmpleado(ObjConexion obj, Empleado empleado) {
+            conexion(obj);
+
+            string sql = Constantes.ACTUALIZAR_EMPLEADO + " ?, ?,?,?,?,?,?";
+
+            // Set the Connection, CommandText and Parameters.
+            cmd = new OleDbCommand(sql, con);
+
+            cmd.Parameters.Add("idEmpleado", OleDbType.Integer);
+            cmd.Parameters.Add("idCargo", OleDbType.Integer);
+            cmd.Parameters.Add("DNI", OleDbType.VarWChar, 8);
+            cmd.Parameters.Add("nombreEmpleado", OleDbType.VarWChar, 20);
+            cmd.Parameters.Add("usuario", OleDbType.VarWChar, 20);
+            cmd.Parameters.Add("contraseña", OleDbType.VarWChar, 20);
+            cmd.Parameters.Add("estado", OleDbType.VarWChar, 20);
+            cmd.Parameters[0].Value = empleado.IdEmpleado;
+            cmd.Parameters[1].Value = empleado.IdCargo;
+            cmd.Parameters[2].Value = empleado.DNI;
+            cmd.Parameters[3].Value = empleado.Nombre;
+            cmd.Parameters[4].Value = empleado.Usuario;
+            cmd.Parameters[5].Value = empleado.Contraseña;
+            cmd.Parameters[6].Value = empleado.Estado;
+
+            // Call  Prepare and ExecuteNonQuery.
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            closeConexion();
+        }
     }
 }

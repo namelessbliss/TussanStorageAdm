@@ -48,7 +48,8 @@ namespace CAPA_DATOS {
         }
 
         public void closeConexion() {
-            cmd.Dispose();
+            if (cmd != null)
+                cmd.Dispose();
             con.Close();
         }
     }

@@ -39,8 +39,12 @@
                     <!--LISTA DE USUARIO-->
                     <h5>Usuarios Registrados</h5>
                     <asp:GridView ID="UserList" runat="server" class="table table-striped table-light"
+                        AllowPaging="true"
+                        DataKeyNames="idEmpleado"
                         AutoGenerateEditButton="True"
-                        OnRowUpdating="OnRowUpdating">
+                        OnRowUpdating="OnRowUpdating"
+                        OnRowEditing="OnRowEditing"
+                        OnRowCancelingEdit="OnRowCancelingEdit">
                     </asp:GridView>
                 </div>
                 <hr>
