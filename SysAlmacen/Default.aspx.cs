@@ -8,11 +8,12 @@ using System.Web.UI.WebControls;
 
 namespace SysAlmacen {
     public partial class Default : System.Web.UI.Page {
-        ClassAdo obj = new ClassAdo();
+        ClassAdo obj;
         ObjConexion objConexion;
 
         protected void Page_Load(object sender, EventArgs e) {
-            objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, "123", Constantes.SERVIDOR);
+            obj = new ClassAdo();
+            objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, Constantes.USER_ADM_PASS, Constantes.SERVIDOR);
         }
 
         protected void btnLogin_Click(object sender, EventArgs e) {
@@ -27,7 +28,7 @@ namespace SysAlmacen {
 
                 if (obj.login(sql) == 1)
                 {
-                    Response.Redirect("resumen.aspx");
+                    Response.Redirect("adm/resumen.aspx");
                 }
                 else
                 {

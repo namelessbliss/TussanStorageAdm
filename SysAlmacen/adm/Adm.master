@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="~/css/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/fontawesome-all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
 
@@ -47,7 +47,7 @@
     <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index: 3; width: 300px;" id="mySidebar">
         <br>
         <div class="w3-container w3-row">
-            <div class="w3-col s4">
+            <div class="w3-col s3">
                 <img src="/img/user.png" class="w3-circle w3-margin-right" style="width: 46px">
             </div>
             <div class="w3-col s8 w3-bar">
@@ -65,9 +65,13 @@
         </div>
         <div class="w3-bar-block">
             <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>Cerrar Menu</a>
-            <a href="resumen.aspx" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>Resumen</a>
+            <a href="resumen.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>Resumen</a>
             <a href="usuario.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Usuarios</a>
+            <a href="cliente.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Clientes</a>
+            <a href="mercaderia.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Mercaderia</a>
             <a href="ordenes.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>Ordenes</a>
+            <a href="transportista.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Transportistas</a>
+            <a href="vehiculo.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Vehículos</a>
             <!--<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>News</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>General</a>
                     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Traffic</a>
