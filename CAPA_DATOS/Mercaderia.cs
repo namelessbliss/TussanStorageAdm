@@ -21,7 +21,7 @@ namespace CAPA_DATOS {
             this.cantidad = cantidad;
         }
 
-        public Mercaderia(string descripcion, double areaCubica, int idCliente, int cantidad) {
+        public Mercaderia(int idCliente, string descripcion, double areaCubica, int cantidad) {
             this.descripcion = descripcion;
             this.areaCubica = areaCubica;
             this.idCliente = idCliente;

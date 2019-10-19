@@ -17,6 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -31,8 +34,7 @@
 
     <title>Tussan</title>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+
 
 </head>
 <body>
@@ -69,9 +71,9 @@
             <a href="usuario.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Usuarios</a>
             <a href="cliente.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Clientes</a>
             <a href="mercaderia.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Mercaderia</a>
+            <a href="listado_mercaderia.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Listado Mercaderia</a>
             <a href="ordenes.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>Ordenes</a>
             <a href="transportista.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Transportistas</a>
-            <a href="vehiculo.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Vehículos</a>
             <!--<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>News</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>General</a>
                     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Traffic</a>

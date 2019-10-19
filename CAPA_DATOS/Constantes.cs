@@ -33,6 +33,7 @@ namespace CAPA_DATOS {
         public const string OBTENER_TRANSPORTISTA_POR_DNI = "sp_selectTransportistaPorDNI ?";
         public const string REGISTRAR_TRANSPORTISTA = "sp_insertarTransportista ?,?";
         public const string ACTUALIZAR_TRANSPORTISTA = "sp_actualizarTransportista ?,?";
+        public const string OBTENER_VISTA_TRANSPORTISTAS = "select * from vistaTransportista";
 
         /**
          * ------------ Vehiculo --------------
@@ -53,10 +54,10 @@ namespace CAPA_DATOS {
         /**
          * ------------ Mercaderia --------------
          **/
-        public const string OBTENER_MERCADERIAS = "sp_selectClientes";
-        public const string OBTENER_MERCADERIA_POR_ID = "sp_selectClientePorId ?";
-        public const string REGISTRAR_MERCADERIA = "sp_insertarCliente ?,?,?,?";
-        public const string ACTUALIZAR_MERCADERIA = "sp_actualizarCliente ?,?,?,?,?";
+        public const string OBTENER_MERCADERIAS = "sp_selectMercaderias";
+        public const string OBTENER_MERCADERIA_POR_ID = "sp_selectMercaderiaPorId ?";
+        public const string REGISTRAR_MERCADERIA = "sp_insertarMercaderia ?,?,?,?";
+        public const string ACTUALIZAR_MERCADERIA = "sp_actualizarMercaderia ?,?,?,?,?";
 
         /**
          * ------------ TipoRegistro --------------

@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCliente.cs" />
+    <Compile Include="CDetalleRegistro.cs" />
     <Compile Include="CEmpleado.cs" />
+    <Compile Include="CMercaderia.cs" />
+    <Compile Include="CRegistro.cs" />
+    <Compile Include="CTipoRegistro.cs" />
+    <Compile Include="CTransportista.cs" />
+    <Compile Include="CVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adm/Adm.master" AutoEventWireup="true" CodeFile="resumen.aspx.cs" Inherits="resumen" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adm/Adm.master" AutoEventWireup="true" CodeBehind="resumen.aspx.cs" Inherits="SysAlmacen.adm.resumen1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
             <div class="w3-container w3-red w3-padding-16">
@@ -52,23 +52,30 @@
 
     <!--LISTA DE USUARIO-->
     <hr>
-    <div class="w3-container">
-        <h5>Usuarios Registrados</h5>
-        <ul class="w3-ul w3-card-4 w3-white">
-            <li class="w3-padding-16">
-                <img src="/img/user.png" class="w3-left w3-circle w3-margin-right" style="width: 35px">
-                <span class="w3-xlarge">Adolfo</span><br>
-            </li>
-            <li class="w3-padding-16">
-                <img src="/img/user.png" class="w3-left w3-circle w3-margin-right" style="width: 35px">
-                <span class="w3-xlarge">Luis</span><br>
-            </li>
-            <li class="w3-padding-16">
-                <img src="/img/user.png" class="w3-left w3-circle w3-margin-right" style="width: 35px">
-                <span class="w3-xlarge">Sergio</span><br>
-            </li>
-        </ul>
-    </div>
+    <form runat="server">
+        <div class="w3-container py-2">
+            <!--LISTA DE USUARIO-->
+            <h5>Usuarios Registrados</h5>
+            <asp:GridView ID="UserList" runat="server" class="table table-striped table-light"
+                AllowPaging="true">
+            </asp:GridView>
+        </div>
+
+        <div class="w3-container py-2">
+            <!--LISTA DE CLIENTE-->
+            <h5>Clientes Registrados</h5>
+            <asp:GridView ID="ClienteList" runat="server" class="table table-striped table-light"
+                AllowPaging="true">
+            </asp:GridView>
+        </div>
+
+        <div class="w3-container py-2">
+            <!--LISTA DE TRANSPORTISTA-->
+            <h5>Transportistas Registrados</h5>
+            <asp:GridView ID="TransportistaList" runat="server" class="table table-striped table-light"
+                AllowPaging="true">
+            </asp:GridView>
+        </div>
+    </form>
     <hr>
 </asp:Content>
-
