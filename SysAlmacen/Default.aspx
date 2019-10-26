@@ -66,7 +66,7 @@
                         <p class="text-white">
                             Ultimas noticias sobre las reglas del negocio:
                             - Esta es una presentacion del sistema actual para
-                            control y registro de almacen de nuestra empresa
+                            control y registro de almacen de la empresa Tussan SAC
                        
                         </p>
                     </div>
