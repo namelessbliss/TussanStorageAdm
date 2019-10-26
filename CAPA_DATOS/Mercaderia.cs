@@ -8,23 +8,32 @@ namespace CAPA_DATOS {
     public class Mercaderia {
 
         int idMercaderia;
+        int idTipoMercaderia;
+        int idCliente;
         string descripcion;
         double areaCubica;
-        int idCliente;
+        string categoria;
+        string unidad;
         int cantidad;
 
-        public Mercaderia(int idMercaderia, string descripcion, double areaCubica, int idCliente, int cantidad) {
+        public Mercaderia(int idMercaderia, int idTipoMercaderia, int idCliente, string descripcion, double areaCubica, string categoria, string unidad, int cantidad) {
             this.idMercaderia = idMercaderia;
+            this.idTipoMercaderia = idTipoMercaderia;
+            this.idCliente = idCliente;
             this.descripcion = descripcion;
             this.areaCubica = areaCubica;
-            this.idCliente = idCliente;
+            this.categoria = categoria;
+            this.unidad = unidad;
             this.cantidad = cantidad;
         }
 
-        public Mercaderia(int idCliente, string descripcion, double areaCubica, int cantidad) {
+        public Mercaderia(int idTipoMercaderia, int idCliente, string descripcion, double areaCubica, string categoria, string unidad, int cantidad) {
+            this.idTipoMercaderia = idTipoMercaderia;
+            this.idCliente = idCliente;
             this.descripcion = descripcion;
             this.areaCubica = areaCubica;
-            this.idCliente = idCliente;
+            this.categoria = categoria;
+            this.unidad = unidad;
             this.cantidad = cantidad;
         }
 
@@ -51,6 +60,21 @@ namespace CAPA_DATOS {
         public int Cantidad {
             get { return this.cantidad; }
             set { this.cantidad = value; }
+        }
+
+        public int IdTipoMercaderia {
+            get { return this.idTipoMercaderia; }
+            set { this.idTipoMercaderia = value; }
+        }
+
+        public string Categoria {
+            get { return this.categoria; }
+            set { this.categoria = value; }
+        }
+
+        public string Unidad {
+            get { return this.unidad; }
+            set { this.unidad = value; }
         }
     }
 }

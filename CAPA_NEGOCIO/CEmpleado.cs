@@ -10,9 +10,12 @@ using System.Threading.Tasks;
 namespace CAPA_NEGOCIO {
     public class CEmpleado : ClassAdo {
 
+        DataSet dsEmpleado;
+        Empleado empleado;
+
         public void registrarEmpleado(ObjConexion obj, Empleado empleado) {
             conexion(obj);
-            string sql = Constantes.REGISTRAR_EMPLEADO + " ?, ?,?,?,?,?";
+            string sql = Constantes.REGISTRAR_EMPLEADO;
             // Set the Connection, CommandText and Parameters.
             cmd = new OleDbCommand(sql, con);
 
@@ -41,6 +44,56 @@ namespace CAPA_NEGOCIO {
             string sql = "execute sp_selectEmpleados;";
             return consultasql(sql);
         }
+
+        public string obtenerNumEmpleados(ObjConexion obj) {
+            conexion(obj);
+            string sql = "SELECT COUNT(*) FROM Empleado WHERE estado = 1";
+            return selectEscalar(sql) + "";
+        }
+
+        public Empleado obtenerEmpleadoPorCredenciales(ObjConexion obj, string usuario, string contraseña) {
+            conexion(obj);
+            string sql = Constantes.OBTENER_EMPLEADO_POR_CREDENCIALES;
+
+            cmd = new OleDbCommand(sql, con);
+
+            cmd.Parameters.Add("usuario", OleDbType.VarWChar, 100);
+            cmd.Parameters.Add("contraseña", OleDbType.VarWChar, 100);
+
+            cmd.Parameters[0].Value = usuario;
+            cmd.Parameters[1].Value = contraseña;
+
+            // Call  Prepare and ExecuteNonQuery.
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            dsEmpleado = new DataSet();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dsEmpleado, "tabla");
+            con.Close();
+
+            //Itera sobre el dataset  para crear un obj empelado
+            foreach (DataTable table in dsEmpleado.Tables)
+            {
+                foreach (DataRow dr in table.Rows)
+                {
+                    int idEmpleado = int.Parse(dr["idEmpleado"].ToString());
+                    int idCargo = int.Parse(dr["idCargo"].ToString());
+                    string dni = dr["DNI"].ToString();
+                    string nombreEmpleado = dr["nombreEmpleado"].ToString();
+
+                    int estado = int.Parse(dr["estado"].ToString());
+
+                    empleado = new Empleado(idEmpleado, idCargo, dni, nombreEmpleado, usuario, contraseña, estado);
+                }
+            }
+
+            if (empleado != null)
+                return empleado;
+            else
+                return null;
+        }
+
 
         public void actualizarEmpleado(ObjConexion obj, Empleado empleado) {
             conexion(obj);

@@ -20,13 +20,24 @@ namespace SysAlmacen.adm {
         private double areaCubica;
 
         protected void Page_Load(object sender, EventArgs e) {
-            cMercaderia = new CMercaderia();
-            obj = new ClassAdo();
-            objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, Constantes.USER_ADM_PASS, Constantes.SERVIDOR);
-
-            if (!this.IsPostBack)
+            if (Global.empleado != null)
             {
-                this.BindGrid();
+                if (Global.empleado.IdCargo == 1)
+                {
+
+                    cMercaderia = new CMercaderia();
+                    obj = new ClassAdo();
+                    objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, Constantes.USER_ADM_PASS, Constantes.SERVIDOR);
+
+                    if (!this.IsPostBack)
+                    {
+                        this.BindGrid();
+                    }
+                }
+            }
+            else
+            {
+                Response.Redirect("~/default.aspx");
             }
         }
 
@@ -43,6 +54,7 @@ namespace SysAlmacen.adm {
 
 
         protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e) {
+            /*
             GridViewRow row = UserList.Rows[(e).RowIndex];
             idMercaderia = Convert.ToInt32(UserList.DataKeys[e.RowIndex].Values[0]);
             descripcion = (row.Cells[1].Controls[0] as TextBox).Text;
@@ -56,6 +68,7 @@ namespace SysAlmacen.adm {
 
             UserList.EditIndex = -1;
             this.BindGrid();
+            */
         }
 
         protected void OnRowCancelingEdit(object sender, EventArgs e) {

@@ -1,6 +1,8 @@
 ﻿using CAPA_DATOS;
+using CAPA_NEGOCIO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,9 +12,12 @@ namespace SysAlmacen {
     public partial class Default : System.Web.UI.Page {
         ClassAdo obj;
         ObjConexion objConexion;
+        CEmpleado cEmpleado;
+        Empleado empleado;
 
         protected void Page_Load(object sender, EventArgs e) {
             obj = new ClassAdo();
+            cEmpleado = new CEmpleado();
             objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, Constantes.USER_ADM_PASS, Constantes.SERVIDOR);
         }
 
@@ -28,7 +33,10 @@ namespace SysAlmacen {
 
                 if (obj.login(sql) == 1)
                 {
-                    Response.Redirect("adm/resumen.aspx");
+                    cEmpleado.closeConexion();
+                    empleado = cEmpleado.obtenerEmpleadoPorCredenciales(objConexion, usuario, contraseña);
+                    Global.empleado = empleado;
+                    redireccionarSegunCargo();
                 }
                 else
                 {
@@ -37,6 +45,18 @@ namespace SysAlmacen {
 
 
             }
+        }
+
+        private void redireccionarSegunCargo() {
+            if (empleado.IdCargo == 1)
+            {
+                Response.Redirect("adm/resumen.aspx");
+            }
+            else if (empleado.IdCargo == 2)
+            {
+                Response.Redirect("ope/acceso.aspx");
+            }
+
         }
     }
 }

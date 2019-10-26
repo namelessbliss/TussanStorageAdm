@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adm/Adm.master" AutoEventWireup="true" CodeBehind="usuario.aspx.cs" Inherits="SysAlmacen.usuario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adm/Amd.Master" AutoEventWireup="true" CodeBehind="usuario.aspx.cs" Inherits="SysAlmacen.usuario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,27 +8,32 @@
         <div class="card-block p-0 p-sm-4 p-md-4 p-xl-4">
             <h2>Registrar Nuevo Usuario</h2>
 
-            <form id="formUsuario" class="justify-content-center" runat="server">
+            <div id="formUsuario" class="justify-content-center">
                 <div class="row">
                     <div class="form-group col-xl-12">
+                        <p class=" h5">Seleccione Cargo:</p>
                         <asp:DropDownList ID="listaCargo" runat="server" placeholder="Cargo" class="form-control">
                             <asp:ListItem Value="1">Administrador</asp:ListItem>
                             <asp:ListItem Value="2">Operario</asp:ListItem>
                         </asp:DropDownList>
                     </div>
                     <div class="form-group col-12">
+                        <p class=" h5">Ingrese DNI:</p>
                         <asp:TextBox runat="server" type="number" MaxLength="8" placeholder="DNI" class="form-control" ID="txtDNI"></asp:TextBox>
                     </div>
                     <div class="form-group col-12">
+                        <p class=" h5">Ingrese Nombre:</p>
                         <asp:TextBox runat="server" type="text" placeholder="Nombre" class="form-control" ID="txtNombre"></asp:TextBox>
                     </div>
                     <div class="form-group col-12">
+                        <p class=" h5">Ingrese usuario:</p>
                         <asp:TextBox runat="server" type="text" placeholder="Usuario" class="form-control" ID="txtUsuario"></asp:TextBox>
                     </div>
                     <div class="form-group col-12">
+                        <p class=" h5">Ingrese contraseña:</p>
                         <asp:TextBox runat="server" type="password" placeholder="Contraseña" class="form-control" ID="txtContraseña"></asp:TextBox>
                     </div>
-                    <div class="col-12 py-2">
+                    <div class="col-12 py-4">
                         <div class="row justify-content-center">
                             <asp:Button runat="server" Text="Registrar Usuario" class="btn bg-primary text-white col-6" ID="btnRegistrarUsuario" OnClick="btnRegistrarUsuario_Click" />
                         </div>
@@ -50,7 +55,7 @@
                     </asp:GridView>
                 </div>
                 <hr>
-            </form>
+            </div>
         </div>
     </div>
     <hr>

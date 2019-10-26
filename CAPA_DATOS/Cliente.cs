@@ -19,15 +19,17 @@ namespace CAPA_DATOS {
             this.idCliente = idCliente;
             this.nombreEmpresa = nombreEmpresa;
             this.dueñoEmpresa = dueñoEmpresa;
-            ruc = rUC;
+            this.ruc = rUC;
             this.estado = estado;
+            mercaderias = new List<Mercaderia>();
         }
 
         public Cliente(string nombreEmpresa, string dueñoEmpresa, string rUC, int estado) {
             this.nombreEmpresa = nombreEmpresa;
             this.dueñoEmpresa = dueñoEmpresa;
-            ruc = rUC;
+            this.ruc = rUC;
             this.estado = estado;
+            mercaderias = new List<Mercaderia>();
         }
 
         public Cliente(int idCliente, string nombreEmpresa, string dueñoEmpresa, string ruc, int estado, List<Mercaderia> mercaderias) :

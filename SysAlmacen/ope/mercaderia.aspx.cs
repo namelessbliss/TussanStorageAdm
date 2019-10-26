@@ -8,8 +8,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SysAlmacen.adm {
-    public partial class Mercaderia : System.Web.UI.Page {
+namespace SysAlmacen.ope {
+    public partial class mercaderia : System.Web.UI.Page {
 
         private ObjConexion objConexion;
         private CMercaderia cMercaderia;
@@ -23,45 +23,52 @@ namespace SysAlmacen.adm {
         private double areaCubica;
 
         protected void Page_Load(object sender, EventArgs e) {
-            cMercaderia = new CMercaderia();
-            cCliente = new CCliente();
-            cTipoMercaderia = new CTipoMercaderia();
-            obj = new ClassAdo();
-            objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, Constantes.USER_ADM_PASS, Constantes.SERVIDOR);
-
-            DataSet dataSet = cCliente.obtenerClientes(objConexion);
-
-            //Itera sobre la lista de clientes registrados para llenar la dropdownlist
-            foreach (DataTable table in dataSet.Tables)
+            if (Global.empleado != null)
             {
-                foreach (DataRow dr in table.Rows)
+                cMercaderia = new CMercaderia();
+                cCliente = new CCliente();
+                cTipoMercaderia = new CTipoMercaderia();
+                obj = new ClassAdo();
+                objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_OPERARIO, Constantes.USER_OPERARIO_PASS, Constantes.SERVIDOR);
+
+                DataSet dataSet = cCliente.obtenerClientes(objConexion);
+
+                //Itera sobre la lista de clientes registrados para llenar la dropdownlist
+                foreach (DataTable table in dataSet.Tables)
                 {
-                    string idCliente = dr["idCliente"].ToString();
-                    string nombreEmpresa = dr["nombreEmpresa"].ToString();
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        string idCliente = dr["idCliente"].ToString();
+                        string nombreEmpresa = dr["nombreEmpresa"].ToString();
 
-                    listaClientes.Items.Add(new ListItem(nombreEmpresa, idCliente));
+                        listaClientes.Items.Add(new ListItem(nombreEmpresa, idCliente));
+                    }
                 }
+                dataSet.Clear();
+                cCliente.closeConexion();
+
+                dataSet = cTipoMercaderia.obtenerTiposMercaderia(objConexion);
+
+                //Itera sobre la lista de tipos mercaderia registrados para llenar la dropdownlist
+                foreach (DataTable table in dataSet.Tables)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        string idTipoMerca = dr["idTipoMerca"].ToString();
+                        string descripcion = dr["descripcionTipoMerca"].ToString();
+
+                        listaTipo.Items.Add(new ListItem(descripcion, idTipoMerca));
+                    }
+                }
+                dataSet.Clear();
+                cTipoMercaderia.closeConexion();
+
+                txtCantidad.Text = "0";
             }
-            dataSet.Clear();
-            cCliente.closeConexion();
-
-            dataSet = cTipoMercaderia.obtenerTiposMercaderia(objConexion);
-
-            //Itera sobre la lista de tipos mercaderia registrados para llenar la dropdownlist
-            foreach (DataTable table in dataSet.Tables)
+            else
             {
-                foreach (DataRow dr in table.Rows)
-                {
-                    string idTipoMerca = dr["idTipoMerca"].ToString();
-                    string descripcion = dr["descripcionTipoMerca"].ToString();
 
-                    listaTipo.Items.Add(new ListItem(descripcion, idTipoMerca));
-                }
             }
-            dataSet.Clear();
-            cTipoMercaderia.closeConexion();
-
-            txtCantidad.Text = "0";
         }
 
         protected void btnRegistrarMerca_Click(object sender, EventArgs e) {

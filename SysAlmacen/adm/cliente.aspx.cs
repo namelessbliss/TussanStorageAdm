@@ -18,13 +18,24 @@ namespace SysAlmacen.adm {
         private string nombreEmpresa, dueñoEmpresa, RUC;
 
         protected void Page_Load(object sender, EventArgs e) {
-            cCliente = new CCliente();
-            ado = new ClassAdo();
-            objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, Constantes.USER_ADM_PASS, Constantes.SERVIDOR);
-
-            if (!this.IsPostBack)
+            if (Global.empleado != null)
             {
-                this.BindGrid();
+                if (Global.empleado.IdCargo == 1)
+                {
+
+                    cCliente = new CCliente();
+                    ado = new ClassAdo();
+                    objConexion = new ObjConexion(Constantes.BASE_DE_DATOS, Constantes.USER_ADM, Constantes.USER_ADM_PASS, Constantes.SERVIDOR);
+
+                    if (!this.IsPostBack)
+                    {
+                        this.BindGrid();
+                    }
+                }
+            }
+            else
+            {
+                Response.Redirect("~/default.aspx");
             }
         }
         protected void btnRegistrarCliente_Click(object sender, EventArgs e) {

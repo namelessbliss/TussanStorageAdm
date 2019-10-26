@@ -10,24 +10,24 @@
 namespace SysAlmacen.adm {
     
     
-    public partial class resumen1 {
+    public partial class listado_registro {
         
         /// <summary>
-        /// Control UserList.
+        /// Control listaTipoGuia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView UserList;
+        protected global::System.Web.UI.WebControls.DropDownList listaTipoGuia;
         
         /// <summary>
-        /// Control ClienteList.
+        /// Control GuiaList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ClienteList;
+        protected global::System.Web.UI.WebControls.GridView GuiaList;
     }
 }

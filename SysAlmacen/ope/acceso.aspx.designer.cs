@@ -7,19 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SysAlmacen.adm {
+namespace SysAlmacen.ope {
     
     
-    public partial class resumen1 {
-        
-        /// <summary>
-        /// Control UserList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView UserList;
+    public partial class acceso {
         
         /// <summary>
         /// Control ClienteList.

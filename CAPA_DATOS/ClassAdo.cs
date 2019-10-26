@@ -38,6 +38,15 @@ namespace CAPA_DATOS {
             return resultado;
         }
 
+        public int selectEscalar(string sql) //1.- exito, 0 fallo
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            int resultado = (Int32)cmd.ExecuteScalar();
+            return resultado;
+        }
+
         public DataSet consultasql(string sql) //retorna datos
         {
             DataSet ds = new DataSet();
@@ -45,6 +54,15 @@ namespace CAPA_DATOS {
             da.Fill(ds, "tabla");
             con.Close();
             return ds;
+        }
+
+        public DataTable consultasqlDataTable(string sql) //retorna datos
+        {
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(sql, con);
+            da.Fill(dt);
+            con.Close();
+            return dt;
         }
 
         public void closeConexion() {

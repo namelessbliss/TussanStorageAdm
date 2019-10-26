@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -69,9 +70,10 @@
   <ItemGroup>
     <Content Include="adm\cliente.aspx" />
     <Content Include="adm\listado_mercaderia.aspx" />
+    <Content Include="adm\listado_registro.aspx" />
     <Content Include="adm\mercaderia.aspx" />
+    <Content Include="adm\operacion_registro.aspx" />
     <Content Include="adm\resumen.aspx" />
-    <Content Include="adm\transportista.aspx" />
     <Content Include="adm\vehiculo.aspx" />
     <Content Include="Capturas\1.jpg" />
     <Content Include="Capturas\2.png" />
@@ -103,15 +105,23 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="adm\ordenes.aspx" />
     <Content Include="adm\usuario.aspx" />
+    <Content Include="ope\acceso.aspx" />
+    <Content Include="ope\cliente.aspx" />
+    <Content Include="ope\mercaderia.aspx" />
+    <Content Include="ope\operacion_registro.aspx" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adm\Adm.master.cs">
-      <DependentUpon>Adm.master</DependentUpon>
+    <Compile Include="adm\Amd.Master.cs">
+      <DependentUpon>Amd.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adm\Amd.Master.designer.cs">
+      <DependentUpon>Amd.Master</DependentUpon>
     </Compile>
     <Compile Include="adm\cliente.aspx.cs">
       <DependentUpon>cliente.aspx</DependentUpon>
@@ -127,6 +137,13 @@
     <Compile Include="adm\listado_mercaderia.aspx.designer.cs">
       <DependentUpon>listado_mercaderia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="adm\listado_registro.aspx.cs">
+      <DependentUpon>listado_registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adm\listado_registro.aspx.designer.cs">
+      <DependentUpon>listado_registro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adm\mercaderia.aspx.cs">
       <DependentUpon>mercaderia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -134,19 +151,19 @@
     <Compile Include="adm\mercaderia.aspx.designer.cs">
       <DependentUpon>mercaderia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="adm\operacion_registro.aspx.cs">
+      <DependentUpon>operacion_registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adm\operacion_registro.aspx.designer.cs">
+      <DependentUpon>operacion_registro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adm\resumen.aspx.cs">
       <DependentUpon>resumen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adm\resumen.aspx.designer.cs">
       <DependentUpon>resumen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="adm\transportista.aspx.cs">
-      <DependentUpon>transportista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adm\transportista.aspx.designer.cs">
-      <DependentUpon>transportista.aspx</DependentUpon>
     </Compile>
     <Compile Include="adm\vehiculo.aspx.cs">
       <DependentUpon>vehiculo.aspx</DependentUpon>
@@ -167,6 +184,41 @@
       <DependentUpon>ordenes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ope\acceso.aspx.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ope\acceso.aspx.designer.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ope\cliente.aspx.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ope\cliente.aspx.designer.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ope\mercaderia.aspx.cs">
+      <DependentUpon>mercaderia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ope\mercaderia.aspx.designer.cs">
+      <DependentUpon>mercaderia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ope\Op.Master.cs">
+      <DependentUpon>Op.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ope\Op.Master.designer.cs">
+      <DependentUpon>Op.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ope\operacion_registro.aspx.cs">
+      <DependentUpon>operacion_registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ope\operacion_registro.aspx.designer.cs">
+      <DependentUpon>operacion_registro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="adm\usuario.aspx.cs">
       <DependentUpon>usuario.aspx</DependentUpon>
@@ -175,9 +227,15 @@
     <Compile Include="adm\usuario.aspx.designer.cs">
       <DependentUpon>usuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adm\Adm.master" />
     <Content Include="css\bootstrap-grid.css.map" />
     <Content Include="css\bootstrap-grid.min.css.map" />
     <Content Include="css\bootstrap-reboot.css.map" />
@@ -188,6 +246,8 @@
     <Content Include="js\bootstrap.bundle.min.js.map" />
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="ope\Op.Master" />
+    <Content Include="adm\Amd.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

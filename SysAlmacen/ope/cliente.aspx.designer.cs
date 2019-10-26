@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SysAlmacen.adm {
+namespace SysAlmacen.ope {
     
     
     public partial class cliente {

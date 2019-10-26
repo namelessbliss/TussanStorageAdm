@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adm/Amd.Master" AutoEventWireup="true" CodeBehind="mercaderia.aspx.cs" Inherits="SysAlmacen.adm.Mercaderia" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ope/Op.Master" AutoEventWireup="true" CodeBehind="mercaderia.aspx.cs" Inherits="SysAlmacen.ope.mercaderia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!--FORMULARIO DE REGISTRO DE USUARIO-->
+    <!--FORMULARIO DE REGISTRO DE MERCA-->
     <div class="card text-center">
         <div class="card-block p-0 p-sm-4 p-md-4 p-xl-4">
             <h2>Registrar Nuevo Mercaderia de Cliente</h2>
@@ -58,9 +58,7 @@
                 <asp:Label ID="mensaje" runat="server" Text="" class="alert display-4"></asp:Label>
                 <div class="w3-container py-5">
                 </div>
-                <hr>
             </div>
         </div>
     </div>
-    <hr>
 </asp:Content>

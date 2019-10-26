@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CAPA_NEGOCIO {
-    public class CVehiculo : ClassAdo {
+    public class CTipoMercaderia : ClassAdo {
 
-        public void registrarVehiculo(ObjConexion obj, Vehiculo vehiculo) {
+        public void registrarTipoMercaderia(ObjConexion obj, TipoMercaderia tipoMerca) {
             conexion(obj);
-            string sql = Constantes.REGISTRAR_VEHICULO;
+            string sql = Constantes.REGISTRAR_TIPO_MERCADERIA;
             // Set the Connection, CommandText and Parameters.
             cmd = new OleDbCommand(sql, con);
 
-            cmd.Parameters.Add("placaVehiculo", OleDbType.VarWChar, 10);
-            cmd.Parameters.Add("TransportistaDNI", OleDbType.VarWChar, 8);
-            cmd.Parameters[0].Value = vehiculo.Placa;
-            cmd.Parameters[1].Value = vehiculo.DNITransportisa;
+            cmd.Parameters.Add("descripcionMercaderia", OleDbType.VarWChar, 100);
+            cmd.Parameters.Add("precioMerca", OleDbType.Decimal);
+            cmd.Parameters[0].Value = tipoMerca.descripcionMercaderia;
+            cmd.Parameters[1].Value = tipoMerca.precioMercaderia;
 
             // Call  Prepare and ExecuteNonQuery.
             cmd.Prepare();
@@ -28,24 +28,27 @@ namespace CAPA_NEGOCIO {
             closeConexion();
         }
 
-        public DataSet obtenerVehiculos(ObjConexion obj) {
+        public DataSet obtenerTiposMercaderia(ObjConexion obj) {
             conexion(obj);
-            string sql = Constantes.OBTENER_VEHICULOS;
+            string sql = Constantes.OBTENER_TIPOS_MERCADERIA;
             return consultasql(sql);
         }
 
-        public void actualizarVehiculo(ObjConexion obj, Vehiculo vehiculo) {
+
+        public void actualizarTipoMercaderia(ObjConexion obj, TipoMercaderia tipoMerca) {
             conexion(obj);
 
-            string sql = Constantes.ACTUALIZAR_VEHICULO;
+            string sql = Constantes.ACTUALIZAR_TIPO_MERCADERIA;
 
             // Set the Connection, CommandText and Parameters.
             cmd = new OleDbCommand(sql, con);
 
-            cmd.Parameters.Add("placaVehiculo", OleDbType.VarWChar, 10);
-            cmd.Parameters.Add("TransportistaDNI", OleDbType.VarWChar, 8);
-            cmd.Parameters[0].Value = vehiculo.Placa;
-            cmd.Parameters[1].Value = vehiculo.DNITransportisa;
+            cmd.Parameters.Add("idTipoMerca", OleDbType.Integer);
+            cmd.Parameters.Add("descripcionMercaderia", OleDbType.VarWChar, 100);
+            cmd.Parameters.Add("precioMerca", OleDbType.Decimal);
+            cmd.Parameters[0].Value = tipoMerca.idTipoMercaderia;
+            cmd.Parameters[1].Value = tipoMerca.descripcionMercaderia;
+            cmd.Parameters[2].Value = tipoMerca.precioMercaderia;
 
             // Call  Prepare and ExecuteNonQuery.
             cmd.Prepare();
